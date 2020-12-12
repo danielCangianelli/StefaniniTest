@@ -14,12 +14,15 @@ class ImageRepositoryImpl(
     override suspend fun getImages(): List<Image>? = getImagesFromCache()
 
     private suspend fun getImagesFromAPI(): List<Image> {
-        lateinit var imageList: List<Image>
+        val imageList: MutableList<Image> = mutableListOf()
         try {
             val response = imageRemoteDataSource.getImages()
             val body = response.body()
-            if (body != null) {
-                imageList = body.data[0].images
+            body?.data?.forEach { image ->
+                image.let {
+                    if (!it.images.isNullOrEmpty() && "image/jpeg" == it.images[0].type)
+                        imageList.add(it.images[0])
+                }
             }
         } catch (exception: Exception) {
             Log.i("Error", exception.message.toString())
@@ -34,8 +37,8 @@ class ImageRepositoryImpl(
         } catch (e: Exception) {
             Log.i("CACHE-ERROR", e.message.toString())
         }
-        if(imageList.isEmpty()){
-            imageList =  getImagesFromAPI()
+        if (imageList.isEmpty()) {
+            imageList = getImagesFromAPI()
             imageCacheDataSource.saveImagesToCache(imageList)
         }
         return imageList

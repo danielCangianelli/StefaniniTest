@@ -1,4 +1,4 @@
-package com.negreiros.stefaninitest.presentation
+package com.negreiros.stefaninitest.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData

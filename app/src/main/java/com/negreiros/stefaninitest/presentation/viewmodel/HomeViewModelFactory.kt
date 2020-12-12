@@ -1,4 +1,4 @@
-package com.negreiros.stefaninitest.presentation
+package com.negreiros.stefaninitest.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -10,7 +10,9 @@ class HomeViewModelFactory(
 ) : ViewModelProvider.Factory{
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if(modelClass.isAssignableFrom(HomeViewModel::class.java)){
-            return HomeViewModel(getImagesUseCase) as T
+            return HomeViewModel(
+                getImagesUseCase
+            ) as T
         }
         throw IllegalArgumentException("View Model Class desconhecida")
     }

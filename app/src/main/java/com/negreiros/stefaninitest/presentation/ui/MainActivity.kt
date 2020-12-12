@@ -1,4 +1,4 @@
-package com.negreiros.stefaninitest.presentation
+package com.negreiros.stefaninitest.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

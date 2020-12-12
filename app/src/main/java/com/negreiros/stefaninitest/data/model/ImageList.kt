@@ -11,3 +11,9 @@ data class ImageList(
     @SerializedName("success")
     val success: Boolean
 )
+
+fun ImageList.mapToImage() : List<Image>{
+    return this.data.map { value ->
+        value.mapToImage()
+    }
+}
