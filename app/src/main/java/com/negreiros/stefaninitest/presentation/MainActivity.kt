@@ -1,7 +1,8 @@
-package com.negreiros.stefaninitest
+package com.negreiros.stefaninitest.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.negreiros.stefaninitest.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
