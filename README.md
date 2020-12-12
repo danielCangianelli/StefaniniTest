@@ -19,12 +19,6 @@ Algumas tecnologias foram utilizadas:
 ### Instalação
 
 Basta clonar ou baixar o projeto do repositório e executar no android studio.
-### Como usar
-
-Primeiramente será pedido uma identificação de até 8 números para iniciar a aplicação.
-
-Após isso será possível acessar o extrato e as features de compra e venda das criptomoedas.
-
 
    [Kotlin]: <https://kotlinlang.org/>
    [MVVM]: <https://developer.android.com/jetpack/guide?hl=pt-br>
